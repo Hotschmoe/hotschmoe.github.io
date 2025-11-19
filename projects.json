@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "Zig + WASM WebGPU Particle Life",
+    "path": "/projects/zig-wasm-particle-life/",
+    "github": "https://github.com/hotschmoe/zig-wasm-particle-life",
+    "description": "An interactive particle simulation built with WebAssembly for high-performance physics calculations and rendering. Explores emergent behavior through simple attraction/repulsion rules between particle types.",
+    "tech": ["Zig", "WebAssembly", "WebGPU", "JavaScript"],
+    "preview": "/projects/zig-wasm-particle-life/"
+  }
+]
+
