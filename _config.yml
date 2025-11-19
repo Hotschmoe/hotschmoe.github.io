@@ -1,0 +1,25 @@
+# Site settings
+title: hotschmoe
+description: Developer & Creator
+url: "https://hotschmoe.github.io"
+baseurl: ""
+
+# Build settings
+theme: minima
+markdown: kramdown
+
+# Minima theme settings
+minima:
+  skin: dark
+  
+# Social links (optional - uncomment and add yours)
+# github_username: hotschmoe
+# twitter_username: 
+# linkedin_username:
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+

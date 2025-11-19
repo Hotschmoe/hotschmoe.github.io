@@ -1,0 +1,36 @@
+---
+---
+
+@import "minima";
+
+/* Custom font definitions - Add your font here */
+/*
+@font-face {
+  font-family: 'YourCustomFont';
+  src: url('/assets/fonts/your-font.woff2') format('woff2'),
+       url('/assets/fonts/your-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'YourCustomFont', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+*/
+
+/* Custom styles */
+.site-header {
+  border-top: 5px solid #424242;
+}
+
+.post-list h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  color: #828282;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
