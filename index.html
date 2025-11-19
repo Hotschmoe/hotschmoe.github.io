@@ -14,8 +14,8 @@
         body {
             font-family: 'Courier New', Courier, monospace;
             line-height: 1.6;
-            color: #00ff00;
-            background: #000000;
+            color: #d0d0d0;
+            background: #0a0a0a;
             min-height: 100vh;
             padding: 20px;
             font-size: 14px;
@@ -32,14 +32,14 @@
 
         /* Left Column - Stats */
         .left-column {
-            border-right: 1px solid rgba(0, 255, 0, 0.2);
+            border-right: 1px solid #2a2a2a;
             padding-right: 30px;
         }
 
         .site-title {
             font-size: 1rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: #00d7ff;
         }
 
         .blink {
@@ -58,12 +58,16 @@
         .stat-item {
             margin-bottom: 8px;
             font-size: 0.9rem;
-            opacity: 0.7;
+            color: #5f5f5f;
+        }
+
+        .stat-item span {
+            color: #d0d0d0;
         }
 
         .stat-divider {
             margin: 20px 0;
-            border-top: 1px solid rgba(0, 255, 0, 0.2);
+            border-top: 1px solid #2a2a2a;
         }
 
         .nav-links {
@@ -72,38 +76,44 @@
 
         .nav-link {
             display: block;
-            color: #00ff00;
             text-decoration: none;
             margin-bottom: 8px;
             font-size: 0.9rem;
-            opacity: 0.7;
             transition: opacity 0.2s ease;
         }
 
+        .nav-link:nth-child(1) {
+            color: #00d7ff;
+        }
+
+        .nav-link:nth-child(2) {
+            color: #d787ff;
+        }
+
         .nav-link:hover {
-            opacity: 1;
+            opacity: 0.7;
         }
 
         .nav-link::before {
             content: "[";
-            opacity: 0.5;
+            color: #5f5f5f;
         }
 
         .nav-link::after {
             content: "]";
-            opacity: 0.5;
+            color: #5f5f5f;
         }
 
         /* Audio Controls */
         .audio-section {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid rgba(0, 255, 0, 0.2);
+            border-top: 1px solid #2a2a2a;
         }
 
         .audio-label {
             font-size: 0.85rem;
-            opacity: 0.5;
+            color: #ffff00;
             margin-bottom: 12px;
         }
 
@@ -115,8 +125,8 @@
 
         .audio-controls button {
             background: none;
-            border: 1px solid rgba(0, 255, 0, 0.5);
-            color: #00ff00;
+            border: 1px solid #5f5f5f;
+            color: #00ff87;
             padding: 6px 12px;
             cursor: pointer;
             font-family: 'Courier New', Courier, monospace;
@@ -126,24 +136,25 @@
         }
 
         .audio-controls button:hover {
-            background: rgba(0, 255, 0, 0.1);
+            background: rgba(0, 255, 135, 0.1);
+            border-color: #00ff87;
         }
 
         .volume-control {
             display: flex;
             align-items: center;
             gap: 10px;
-            opacity: 0.7;
         }
 
         .volume-control label {
             font-size: 0.85rem;
+            color: #5f5f5f;
         }
 
         input[type="range"] {
             width: 100%;
             height: 2px;
-            background: rgba(0, 255, 0, 0.3);
+            background: #2a2a2a;
             outline: none;
             -webkit-appearance: none;
         }
@@ -152,21 +163,21 @@
             -webkit-appearance: none;
             width: 10px;
             height: 10px;
-            background: #00ff00;
+            background: #00ff87;
             cursor: pointer;
         }
 
         input[type="range"]::-moz-range-thumb {
             width: 10px;
             height: 10px;
-            background: #00ff00;
+            background: #00ff87;
             cursor: pointer;
             border: none;
         }
 
         .now-playing {
             font-size: 0.85rem;
-            opacity: 0.5;
+            color: #5f5f5f;
         }
 
         /* Middle Column - Project Details */
@@ -176,7 +187,7 @@
         }
 
         .welcome-screen {
-            opacity: 0.6;
+            color: #5f5f5f;
             text-align: center;
             padding-top: 100px;
         }
@@ -210,11 +221,12 @@
             font-weight: 400;
             margin-bottom: 15px;
             line-height: 1.3;
+            color: #ffffff;
         }
 
         .project-meta {
             font-size: 0.9rem;
-            opacity: 0.6;
+            color: #5f5f5f;
             margin-bottom: 10px;
         }
 
@@ -227,46 +239,53 @@
 
         .project-link {
             display: inline-block;
-            color: #00ff00;
             text-decoration: none;
-            border: 1px solid rgba(0, 255, 0, 0.5);
+            border: 1px solid #5f5f5f;
             padding: 8px 16px;
             font-size: 0.9rem;
             transition: all 0.2s ease;
         }
 
+        .project-link:nth-of-type(1) {
+            color: #00ff87;
+        }
+
+        .project-link:nth-of-type(2) {
+            color: #00d7ff;
+        }
+
         .project-link:hover {
-            background: rgba(0, 255, 0, 0.1);
-            border-color: #00ff00;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: currentColor;
         }
 
         .project-link::before {
             content: "[";
-            opacity: 0.5;
+            color: #5f5f5f;
             margin-right: 4px;
         }
 
         .project-link::after {
             content: "]";
-            opacity: 0.5;
+            color: #5f5f5f;
             margin-left: 4px;
         }
 
         .project-description {
             margin-top: 30px;
             line-height: 1.8;
-            opacity: 0.8;
+            color: #a8a8a8;
         }
 
         .project-tech {
             margin-top: 30px;
             padding-top: 30px;
-            border-top: 1px solid rgba(0, 255, 0, 0.2);
+            border-top: 1px solid #2a2a2a;
         }
 
         .tech-label {
             font-size: 0.85rem;
-            opacity: 0.5;
+            color: #5f5f5f;
             margin-bottom: 10px;
         }
 
@@ -278,9 +297,9 @@
 
         .tech-tag {
             font-size: 0.85rem;
-            opacity: 0.7;
+            color: #d0d0d0;
             padding: 4px 8px;
-            border: 1px solid rgba(0, 255, 0, 0.3);
+            border: 1px solid #2a2a2a;
         }
 
         .project-preview {
@@ -289,27 +308,27 @@
 
         .preview-label {
             font-size: 0.85rem;
-            opacity: 0.5;
+            color: #5f5f5f;
             margin-bottom: 15px;
         }
 
         .preview-frame {
             width: 100%;
             height: 500px;
-            border: 1px solid rgba(0, 255, 0, 0.3);
+            border: 1px solid #2a2a2a;
             background: #000;
         }
 
         /* Right Column - Project List */
         .right-column {
-            border-left: 1px solid rgba(0, 255, 0, 0.2);
+            border-left: 1px solid #2a2a2a;
             padding-left: 30px;
         }
 
         .project-list-title {
             font-size: 1rem;
             margin-bottom: 30px;
-            opacity: 0.9;
+            color: #d0d0d0;
         }
 
         .project-list {
@@ -326,22 +345,30 @@
         }
 
         .project-list-item:hover {
-            border-color: rgba(0, 255, 0, 0.3);
-            background: rgba(0, 255, 0, 0.05);
+            border-color: #2a2a2a;
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .project-list-item.active {
-            border-color: #00ff00;
-            background: rgba(0, 255, 0, 0.1);
+            border-color: #5f5f5f;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .project-number {
-            opacity: 0.5;
+            color: #5f5f5f;
             margin-right: 8px;
         }
 
         .project-name {
-            opacity: 0.8;
+            color: #00ff87;
+        }
+
+        .project-list-item:nth-child(even) .project-name {
+            color: #ff87ff;
+        }
+
+        .project-list-item:nth-child(3n) .project-name {
+            color: #00d7ff;
         }
 
         /* Responsive Design */
@@ -362,7 +389,7 @@
             .right-column {
                 border: none;
                 padding: 0;
-                border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+                border-bottom: 1px solid #2a2a2a;
                 padding-bottom: 30px;
             }
 
