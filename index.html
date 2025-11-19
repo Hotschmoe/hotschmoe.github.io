@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hotschmoe - Projects</title>
+    <title>hotschmoe</title>
     <style>
         * {
             margin: 0;
@@ -13,190 +13,196 @@
 
         body {
             font-family: 'Courier New', Courier, monospace;
-            line-height: 1.6;
+            line-height: 1.8;
             color: #00ff00;
-            background: #0a0a0a;
+            background: #000000;
             min-height: 100vh;
-            padding: 20px;
-            position: relative;
-        }
-
-        /* Subtle scanline effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.15),
-                rgba(0, 0, 0, 0.15) 1px,
-                transparent 1px,
-                transparent 2px
-            );
-            pointer-events: none;
-            z-index: 1;
+            padding: 40px 20px;
+            font-size: 15px;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 680px;
             margin: 0 auto;
-            position: relative;
-            z-index: 2;
         }
 
         header {
-            margin-bottom: 3rem;
-            border: 2px solid #00ff00;
-            padding: 2rem;
-            background: rgba(0, 20, 0, 0.8);
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            text-shadow: 0 0 10px #00ff00;
-            letter-spacing: 0.1em;
-        }
-
-        h1::before {
-            content: "root@hotschmoe:~$ ";
-            color: #00ff00;
-            opacity: 0.7;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin-left: 2rem;
-        }
-
-        .subtitle::before {
-            content: "> ";
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: rgba(0, 20, 0, 0.6);
-            border: 2px solid #00ff00;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: #00ff00;
-            display: block;
-            position: relative;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.1);
-        }
-
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, #00ff00, #00aa00);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 0 30px rgba(0, 255, 0, 0.4);
-            background: rgba(0, 30, 0, 0.8);
-        }
-
-        .project-card:hover::before {
-            opacity: 0.2;
-        }
-
-        .project-header {
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #00ff00;
         }
 
-        .project-prefix {
-            font-size: 0.9rem;
-            opacity: 0.6;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 5px #00ff00;
-        }
-
-        .project-description {
-            color: #00dd00;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
             opacity: 0.9;
         }
 
-        .tech-tags {
+        .subtitle {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            font-weight: 300;
+        }
+
+        /* Audio Player Controls */
+        .audio-controls {
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
             display: flex;
+            align-items: center;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
         }
 
-        .tech-tag {
-            background: transparent;
+        .audio-controls button {
+            background: none;
             border: 1px solid #00ff00;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.85rem;
             color: #00ff00;
-            opacity: 0.8;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
 
-        .tech-tag::before {
-            content: "[";
-            margin-right: 0.2rem;
+        .audio-controls button:hover {
+            background: rgba(0, 255, 0, 0.1);
         }
 
-        .tech-tag::after {
-            content: "]";
-            margin-left: 0.2rem;
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0.7;
         }
 
+        .volume-control label {
+            font-size: 0.85rem;
+        }
+
+        input[type="range"] {
+            width: 100px;
+            height: 2px;
+            background: rgba(0, 255, 0, 0.3);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #00ff00;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            background: #00ff00;
+            cursor: pointer;
+            border: none;
+        }
+
+        .now-playing {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            flex: 1 1 100%;
+        }
+
+        /* Projects List */
+        .projects-section {
+            margin-top: 40px;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            opacity: 0.7;
+            font-weight: 400;
+        }
+
+        .projects-list {
+            list-style: none;
+        }
+
+        .project-item {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.15);
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-number {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-bottom: 8px;
+        }
+
+        .project-link {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-bottom: 12px;
+            transition: opacity 0.2s ease;
+        }
+
+        .project-link:hover {
+            opacity: 0.7;
+        }
+
+        .project-link::before {
+            content: "> ";
+            opacity: 0.5;
+        }
+
+        .project-description {
+            color: #00ff00;
+            opacity: 0.7;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .project-meta {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-top: 8px;
+        }
+
+        .project-meta::before {
+            content: "[ ";
+        }
+
+        .project-meta::after {
+            content: " ]";
+        }
+
+        /* Footer */
         footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 255, 0, 0.2);
             text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            border-top: 2px solid #00ff00;
-            opacity: 0.8;
+            font-size: 0.9rem;
+            opacity: 0.6;
         }
 
         footer a {
             color: #00ff00;
             text-decoration: none;
-            border-bottom: 1px solid #00ff00;
-            transition: all 0.3s ease;
+            transition: opacity 0.2s ease;
         }
 
         footer a:hover {
-            text-shadow: 0 0 10px #00ff00;
-            border-bottom-color: transparent;
-        }
-
-        footer::before {
-            content: "[ ";
-        }
-
-        footer::after {
-            content: " ]";
+            opacity: 0.7;
         }
 
         /* Blinking cursor effect */
@@ -206,43 +212,135 @@
         }
 
         .blink {
-            animation: blink 1s infinite;
+            animation: blink 1.2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            body {
+                padding: 30px 15px;
+                font-size: 14px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .audio-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>hotschmoe</h1>
-            <p class="subtitle">Developer & Creator<span class="blink">_</span></p>
+            <h1>hotschmoe<span class="blink">_</span></h1>
+            <p class="subtitle">Tinkerer & Engineer (sometimes)</p>
+            
+            <div class="audio-controls">
+                <button id="playPauseBtn">play</button>
+                <div class="volume-control">
+                    <label for="volumeSlider">vol:</label>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="20">
+                </div>
+                <div class="now-playing" id="nowPlaying">no audio loaded</div>
+            </div>
         </header>
 
         <main>
-            <div class="projects-grid">
-                <a href="/zig-wasm-particle-life/" class="project-card">
-                    <div class="project-header">
-                        <div class="project-prefix">$ cat projects/</div>
-                        <h2 class="project-title">Zig + WASM WebGPU Particle Life</h2>
-                    </div>
-                    <p class="project-description">
-                        An interactive particle simulation built with WebAssembly for high-performance physics calculations and rendering.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">WebAssembly</span>
-                        <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">Canvas</span>
-                    </div>
-                </a>
+            <section class="projects-section">
+                <h2 class="section-title">projects:</h2>
+                <ul class="projects-list">
+                    <li class="project-item">
+                        <div class="project-number">01:</div>
+                        <a href="/zig-wasm-particle-life/" class="project-link">Zig + WASM WebGPU Particle Life</a>
+                        <p class="project-description">
+                            An interactive particle simulation built with WebAssembly for high-performance 
+                            physics calculations and rendering. Explores emergent behavior through simple 
+                            attraction/repulsion rules between particle types.
+                        </p>
+                        <div class="project-meta">Zig, WebAssembly, WebGPU, JavaScript</div>
+                    </li>
 
-                <!-- Add more project cards here as you build them -->
-            </div>
+                    <!-- Add more projects here -->
+                    <!-- 
+                    <li class="project-item">
+                        <div class="project-number">02:</div>
+                        <a href="/your-project/" class="project-link">Project Name</a>
+                        <p class="project-description">
+                            Project description goes here.
+                        </p>
+                        <div class="project-meta">Tech, Stack, Here</div>
+                    </li>
+                    -->
+                </ul>
+            </section>
         </main>
 
         <footer>
             <p>
-                <a href="https://github.com/hotschmoe" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/hotschmoe" target="_blank" rel="noopener">github</a>
             </p>
         </footer>
     </div>
+
+    <audio id="bgAudio" loop>
+        <source src="/assets/background-music.mp3" type="audio/mpeg">
+        <source src="/assets/background-music.ogg" type="audio/ogg">
+    </audio>
+
+    <script>
+        const audio = document.getElementById('bgAudio');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const nowPlaying = document.getElementById('nowPlaying');
+
+        // Set initial volume (20%)
+        audio.volume = 0.2;
+
+        // Check if audio source is loaded
+        if (audio.querySelector('source')) {
+            nowPlaying.textContent = 'ready';
+        }
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playPauseBtn.textContent = 'pause';
+                    nowPlaying.textContent = 'playing...';
+                }).catch(err => {
+                    console.log('Playback failed:', err);
+                    nowPlaying.textContent = 'playback failed - check console';
+                });
+            } else {
+                audio.pause();
+                playPauseBtn.textContent = 'play';
+                nowPlaying.textContent = 'paused';
+            }
+        });
+
+        volumeSlider.addEventListener('input', (e) => {
+            audio.volume = e.target.value / 100;
+        });
+
+        // Update playing status
+        audio.addEventListener('playing', () => {
+            playPauseBtn.textContent = 'pause';
+            nowPlaying.textContent = 'playing...';
+        });
+
+        audio.addEventListener('pause', () => {
+            playPauseBtn.textContent = 'play';
+            nowPlaying.textContent = 'paused';
+        });
+
+        audio.addEventListener('ended', () => {
+            playPauseBtn.textContent = 'play';
+            nowPlaying.textContent = 'finished';
+        });
+    </script>
 </body>
 </html>
