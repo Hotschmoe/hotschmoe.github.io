@@ -1,4 +1,3 @@
-- better description for wasm project, attribute nikita
 - attribute music provider ()
 - attribute music for programers for style design
 - get more tools
